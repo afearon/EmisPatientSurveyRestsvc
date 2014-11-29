@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities">
+    <EntitySetMapping Name="referralfeedbacks">
+      <EntityTypeMapping TypeName="CRMModel.referralfeedback">
+        <MappingFragment StoreEntitySet="referralfeedback">
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="feed_diagnosiscomments" ColumnName="feed_diagnosiscomments" />
+          <ScalarProperty Name="feed_expecteddiagnosis" ColumnName="feed_expecteddiagnosis" />
+          <ScalarProperty Name="feed_feedbackcomments" ColumnName="feed_feedbackcomments" />
+          <ScalarProperty Name="feed_feedbackreceived" ColumnName="feed_feedbackreceived" />
+          <ScalarProperty Name="feed_opportunityid" ColumnName="feed_opportunityid" />
+          <ScalarProperty Name="feed_leadid" ColumnName="feed_leadid" />
+          <ScalarProperty Name="feed_GPComments" ColumnName="feed_GPComments" />
+          <ScalarProperty Name="feed_followupdate" ColumnName="feed_followupdate" />
+          <ScalarProperty Name="feed_ComplicationDetails" ColumnName="feed_ComplicationDetails" />
+          <ScalarProperty Name="feed_complications" ColumnName="feed_complications" />
+          <ScalarProperty Name="feed_PatientComments" ColumnName="feed_PatientComments" />
+          <ScalarProperty Name="feed_description" ColumnName="feed_description" />
+          <ScalarProperty Name="feed_userid" ColumnName="feed_userid" />
+          <ScalarProperty Name="feed_gpid" ColumnName="feed_gpid" />
+          <ScalarProperty Name="feed_gpracticeid" ColumnName="feed_gpracticeid" />
+          <ScalarProperty Name="feed_Secterr" ColumnName="feed_Secterr" />
+          <ScalarProperty Name="feed_Deleted" ColumnName="feed_Deleted" />
+          <ScalarProperty Name="feed_TimeStamp" ColumnName="feed_TimeStamp" />
+          <ScalarProperty Name="feed_UpdatedDate" ColumnName="feed_UpdatedDate" />
+          <ScalarProperty Name="feed_UpdatedBy" ColumnName="feed_UpdatedBy" />
+          <ScalarProperty Name="feed_CreatedDate" ColumnName="feed_CreatedDate" />
+          <ScalarProperty Name="feed_CreatedBy" ColumnName="feed_CreatedBy" />
+          <ScalarProperty Name="feed_feedid" ColumnName="feed_feedid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetEmisPatientSurveyInfo" FunctionName="CRMModel.Store.sp_GetEmisPatientSurveyInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CRMModel.sp_GetEmisPatientSurveyInfo_Result">
+          <ScalarProperty Name="Lead_PersonPhoneFullNumber" ColumnName="Lead_PersonPhoneFullNumber" />
+          <ScalarProperty Name="Lead_PersonName" ColumnName="Lead_PersonName" />
+          <ScalarProperty Name="Lead_LeadID" ColumnName="Lead_LeadID" />
+          <ScalarProperty Name="Lead_CreatedBy" ColumnName="Lead_CreatedBy" />
+          <ScalarProperty Name="Lead_CreatedDate" ColumnName="Lead_CreatedDate" />
+          <ScalarProperty Name="Lead_UpdatedBy" ColumnName="Lead_UpdatedBy" />
+          <ScalarProperty Name="Lead_UpdatedDate" ColumnName="Lead_UpdatedDate" />
+          <ScalarProperty Name="Lead_Deleted" ColumnName="Lead_Deleted" />
+          <ScalarProperty Name="Lead_Source" ColumnName="Lead_Source" />
+          <ScalarProperty Name="Lead_Stage" ColumnName="Lead_Stage" />
+          <ScalarProperty Name="Lead_Status" ColumnName="Lead_Status" />
+          <ScalarProperty Name="Lead_Description" ColumnName="Lead_Description" />
+          <ScalarProperty Name="Lead_Details" ColumnName="Lead_Details" />
+          <ScalarProperty Name="Lead_Rating" ColumnName="Lead_Rating" />
+          <ScalarProperty Name="Lead_ChannelID" ColumnName="Lead_ChannelID" />
+          <ScalarProperty Name="Lead_Opened" ColumnName="Lead_Opened" />
+          <ScalarProperty Name="Lead_Closed" ColumnName="Lead_Closed" />
+          <ScalarProperty Name="lead_gp" ColumnName="lead_gp" />
+          <ScalarProperty Name="lead_gppractice" ColumnName="lead_gppractice" />
+          <ScalarProperty Name="oppo_consultdate" ColumnName="oppo_consultdate" />
+          <ScalarProperty Name="oppo_consultationdate" ColumnName="oppo_consultationdate" />
+          <ScalarProperty Name="Oppo_Stage" ColumnName="Oppo_Stage" />
+          <ScalarProperty Name="Oppo_Status" ColumnName="Oppo_Status" />
+          <ScalarProperty Name="Consultant" ColumnName="Consultant" />
+          <ScalarProperty Name="LeadStatus" ColumnName="LeadStatus" />
+          <ScalarProperty Name="OppoStatus" ColumnName="OppoStatus" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="lead_gpreference" ColumnName="lead_gpreference" />
+          <ScalarProperty Name="GP" ColumnName="GP" />
+          <ScalarProperty Name="lead_feedbackid" ColumnName="lead_feedbackid" />
+          <ScalarProperty Name="oppo_AuditCompleteDate" ColumnName="oppo_AuditCompleteDate" />
+          <ScalarProperty Name="oppo_dischargedate" ColumnName="oppo_dischargedate" />
+          <ScalarProperty Name="oppo_primarytreatment" ColumnName="oppo_primarytreatment" />
+          <ScalarProperty Name="oppo_clinicalaudit" ColumnName="oppo_clinicalaudit" />
+          <ScalarProperty Name="lead_specialinstructions" ColumnName="lead_specialinstructions" />
+          <ScalarProperty Name="lead_contacttime" ColumnName="lead_contacttime" />
+          <ScalarProperty Name="Lead_PersonPhoneNumber" ColumnName="Lead_PersonPhoneNumber" />
+          <ScalarProperty Name="lead_personmobilenumber" ColumnName="lead_personmobilenumber" />
+          <ScalarProperty Name="feed_feedid" ColumnName="feed_feedid" />
+          <ScalarProperty Name="feed_CreatedBy" ColumnName="feed_CreatedBy" />
+          <ScalarProperty Name="feed_CreatedDate" ColumnName="feed_CreatedDate" />
+          <ScalarProperty Name="feed_UpdatedBy" ColumnName="feed_UpdatedBy" />
+          <ScalarProperty Name="feed_UpdatedDate" ColumnName="feed_UpdatedDate" />
+          <ScalarProperty Name="feed_TimeStamp" ColumnName="feed_TimeStamp" />
+          <ScalarProperty Name="feed_Deleted" ColumnName="feed_Deleted" />
+          <ScalarProperty Name="feed_Secterr" ColumnName="feed_Secterr" />
+          <ScalarProperty Name="feed_gpracticeid" ColumnName="feed_gpracticeid" />
+          <ScalarProperty Name="feed_gpid" ColumnName="feed_gpid" />
+          <ScalarProperty Name="feed_userid" ColumnName="feed_userid" />
+          <ScalarProperty Name="feed_description" ColumnName="feed_description" />
+          <ScalarProperty Name="feed_PatientComments" ColumnName="feed_PatientComments" />
+          <ScalarProperty Name="feed_complications" ColumnName="feed_complications" />
+          <ScalarProperty Name="feed_ComplicationDetails" ColumnName="feed_ComplicationDetails" />
+          <ScalarProperty Name="feed_followupdate" ColumnName="feed_followupdate" />
+          <ScalarProperty Name="feed_GPComments" ColumnName="feed_GPComments" />
+          <ScalarProperty Name="feed_leadid" ColumnName="feed_leadid" />
+          <ScalarProperty Name="feed_opportunityid" ColumnName="feed_opportunityid" />
+          <ScalarProperty Name="feed_feedbackreceived" ColumnName="feed_feedbackreceived" />
+          <ScalarProperty Name="feed_feedbackcomments" ColumnName="feed_feedbackcomments" />
+          <ScalarProperty Name="feed_expecteddiagnosis" ColumnName="feed_expecteddiagnosis" />
+          <ScalarProperty Name="feed_diagnosiscomments" ColumnName="feed_diagnosiscomments" />
+          <ScalarProperty Name="lead_contactnotes" ColumnName="lead_contactnotes" />
+          <ScalarProperty Name="lead_gprecommendedspec" ColumnName="lead_gprecommendedspec" />
+          <ScalarProperty Name="RecommSpecDesc" ColumnName="RecommSpecDesc" />
+          <ScalarProperty Name="lead_referringgp" ColumnName="lead_referringgp" />
+          <ScalarProperty Name="Lead_CompanyPostCode" ColumnName="Lead_CompanyPostCode" />
+          <ScalarProperty Name="Lead_PersonFirstName" ColumnName="Lead_PersonFirstName" />
+          <ScalarProperty Name="Lead_PersonLastName" ColumnName="Lead_PersonLastName" />
+          <ScalarProperty Name="Lead_CompanyAddress1" ColumnName="Lead_CompanyAddress1" />
+          <ScalarProperty Name="lead_insurer" ColumnName="lead_insurer" />
+          <ScalarProperty Name="lead_persondob" ColumnName="lead_persondob" />
+          <ScalarProperty Name="lead_OtherInsurer" ColumnName="lead_OtherInsurer" />
+          <ScalarProperty Name="Capt_Deleted" ColumnName="Capt_Deleted" />
+          <ScalarProperty Name="lead_pers_dob" ColumnName="lead_pers_dob" />
+          <ScalarProperty Name="furt_EventID" ColumnName="furt_EventID" />
+          <ScalarProperty Name="furt_FurtherID" ColumnName="furt_FurtherID" />
+          <ScalarProperty Name="FirstTreatment" ColumnName="FirstTreatment" />
+          <ScalarProperty Name="furt_conultantid" ColumnName="furt_conultantid" />
+          <ScalarProperty Name="Lead_PrimaryPersonID" ColumnName="Lead_PrimaryPersonID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_REFERRAL_InsUpDFeedback" FunctionName="CRMModel.Store.sp_REFERRAL_InsUpDFeedback" />
+  </EntityContainerMapping>
+</Mapping>

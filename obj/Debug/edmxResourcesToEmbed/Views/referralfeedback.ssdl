@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CRMModelStoreContainer">
+    <EntitySet Name="referralfeedback" EntityType="CRMModel.Store.referralfeedback" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="referralfeedback">
+    <Key>
+      <PropertyRef Name="feed_feedid" />
+    </Key>
+    <Property Name="feed_feedid" Type="int" Nullable="false" />
+    <Property Name="feed_CreatedBy" Type="int" />
+    <Property Name="feed_CreatedDate" Type="datetime" />
+    <Property Name="feed_UpdatedBy" Type="int" />
+    <Property Name="feed_UpdatedDate" Type="datetime" />
+    <Property Name="feed_TimeStamp" Type="datetime" />
+    <Property Name="feed_Deleted" Type="int" />
+    <Property Name="feed_Secterr" Type="int" />
+    <Property Name="feed_gpracticeid" Type="int" />
+    <Property Name="feed_gpid" Type="int" />
+    <Property Name="feed_userid" Type="int" />
+    <Property Name="feed_description" Type="nchar" MaxLength="30" />
+    <Property Name="feed_PatientComments" Type="ntext" />
+    <Property Name="feed_complications" Type="nvarchar" MaxLength="40" />
+    <Property Name="feed_ComplicationDetails" Type="ntext" />
+    <Property Name="feed_followupdate" Type="datetime" />
+    <Property Name="feed_GPComments" Type="ntext" />
+    <Property Name="feed_leadid" Type="int" />
+    <Property Name="feed_opportunityid" Type="int" />
+    <Property Name="feed_feedbackreceived" Type="nchar" MaxLength="1" />
+    <Property Name="feed_feedbackcomments" Type="ntext" />
+    <Property Name="feed_expecteddiagnosis" Type="nchar" MaxLength="1" />
+    <Property Name="feed_diagnosiscomments" Type="ntext" />
+    <Property Name="EventID" Type="nchar" MaxLength="16" />
+  </EntityType>
+  <Function Name="sp_GetEmisPatientSurveyInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EventID" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="sp_REFERRAL_InsUpDFeedback" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LeadId" Type="int" Mode="In" />
+    <Parameter Name="CreatedBy" Type="int" Mode="In" />
+    <Parameter Name="FeedBackReceived" Type="nchar" Mode="In" />
+    <Parameter Name="FeedBackComments" Type="ntext" Mode="In" />
+    <Parameter Name="Complications" Type="nchar" Mode="In" />
+    <Parameter Name="ComplicationDetails" Type="ntext" Mode="In" />
+    <Parameter Name="ExpectedDiagnosis" Type="nchar" Mode="In" />
+    <Parameter Name="DiagnosisComments" Type="ntext" Mode="In" />
+    <Parameter Name="GPComments" Type="ntext" Mode="In" />
+  </Function>
+</Schema>
