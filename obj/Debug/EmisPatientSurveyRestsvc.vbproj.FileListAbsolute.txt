@@ -20,10 +20,10 @@ C:\projects\EmisPatientSurveyRestsvc\bin\EntityFramework.dll
 C:\projects\EmisPatientSurveyRestsvc\bin\System.Web.Http.dll
 C:\projects\EmisPatientSurveyRestsvc\bin\System.Web.Http.WebHost.dll
 C:\projects\EmisPatientSurveyRestsvc\bin\System.Net.Http.Formatting.dll
-C:\projects\EmisPatientSurveyRestsvc\bin\Newtonsoft.Json.xml
 C:\projects\EmisPatientSurveyRestsvc\bin\System.Web.Http.xml
 C:\projects\EmisPatientSurveyRestsvc\bin\System.Web.Http.WebHost.xml
 C:\projects\EmisPatientSurveyRestsvc\bin\System.Net.Http.Formatting.xml
 C:\projects\EmisPatientSurveyRestsvc\obj\Debug\MyRestService_vb.dll
 C:\projects\EmisPatientSurveyRestsvc\obj\Debug\MyRestService_vb.xml
 C:\projects\EmisPatientSurveyRestsvc\obj\Debug\MyRestService_vb.pdb
+C:\projects\EmisPatientSurveyRestsvc\obj\Debug\EmisPatientSurveyRestsvc.vbprojResolveAssemblyReference.cache

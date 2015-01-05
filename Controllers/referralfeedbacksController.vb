@@ -36,32 +36,32 @@ Public Class referralfeedbacksController
 
         'check to see if a survey record exsists in the table for this patient based on event or feedid?
         Dim existingPatientSurveysCount = _context.referralfeedbacks.Count(Function(a) a.EventID = feed.EventID)
-        ' Do your insert if 0
-        If existingPatientSurveysCount = 0 Then
-            'set the created date to now
-            feed.feed_CreatedDate = Now
-            _context.referralfeedbacks.Add(feed)
-        Else
-            'do the update
-            Put(feed)
-        End If
+        ' ok in this instance the sp_REFERRAL_InsUpDFeedback will check if an insert or an update is appropriate and perform each operation
+        ' If existingPatientSurveysCount = 0 Then
+        'set the created date to now
+        feed.feed_CreatedDate = Now
+
+        'add a new record to the table using the built in stored procedure for Madcap
+        _context.sp_REFERRAL_InsUpDFeedback(feed.feed_leadid, feed.feed_CreatedBy, feed.feed_feedbackreceived, feed.feed_feedbackcomments, feed.feed_complications, feed.feed_ComplicationDetails, feed.feed_expecteddiagnosis, feed.feed_diagnosiscomments, feed.feed_GPComments)
+
+        'do the below if your only adding a new record to the table directly
+        '_context.referralfeedbacks.Add(feed)
+        ' Else
+        'do the update
+        'Put(feed)
+        'End If
         Return _context.SaveChanges()
     End Function
     Public Function Put(ByVal feed As referralfeedback) As Integer
-        'for updates we search not by PK referral feedid but eventID as there may be more than one survey for the patient?
-        Dim feedb As referralfeedback = _context.referralfeedbacks.Find(feed.EventID)
 
-        feedb.feed_UpdatedBy = feed.feed_UpdatedBy
-        feedb.feed_UpdatedDate = feed.feed_UpdatedDate
-        feedb.feed_leadid = feed.feed_leadid
-        feedb.EventID = feed.EventID
-        feedb.feed_feedbackreceived = feed.feed_feedbackreceived
-        feedb.feed_feedbackcomments = feed.feed_feedbackcomments
-        feedb.feed_complications = feed.feed_complications
-        feedb.feed_ComplicationDetails = feed.feed_ComplicationDetails
-        feedb.feed_expecteddiagnosis = feed.feed_expecteddiagnosis
-        feed.feed_diagnosiscomments = feed.feed_diagnosiscomments
-        feedb.feed_GPComments = feed.feed_GPComments
+
+        ' ok in this instance the sp_REFERRAL_InsUpDFeedback will check if an insert or an update is appropriate and perform each operation
+        ' If existingPatientSurveysCount = 0 Then
+        'set the created date to now
+        feed.feed_CreatedDate = Now
+
+        'add/update record in the referralfeedback table using the built in stored procedure for Madcap
+        _context.sp_REFERRAL_InsUpDFeedback(feed.feed_leadid, feed.feed_CreatedBy, feed.feed_feedbackreceived, feed.feed_feedbackcomments, feed.feed_complications, feed.feed_ComplicationDetails, feed.feed_expecteddiagnosis, feed.feed_diagnosiscomments, feed.feed_GPComments)
 
 
         Return _context.SaveChanges()
@@ -97,29 +97,26 @@ Public Class referralfeedbacksController
 
 
 
-
-
-
-
             results.Add(New sp_GetEmisPatientSurveyInfo_Result() With { _
-                .Lead_PrimaryPersonID = EmisReferralFeedback.Lead_PrimaryPersonID, _
-                .furt_conultantid = EmisReferralFeedback.furt_conultantid, _
-                .Consultant = EmisReferralFeedback.Consultant, _
-                .feed_opportunityid = EmisReferralFeedback.feed_opportunityid, _
-                .feed_leadid = EmisReferralFeedback.feed_leadid, _
                 .Lead_LeadID = EmisReferralFeedback.Lead_LeadID, _
-                .lead_gpreference = EmisReferralFeedback.lead_gpreference, _
-                .Lead_PersonName = EmisReferralFeedback.Lead_PersonName, _
-                .Lead_Description = EmisReferralFeedback.Lead_Description, _
-                .oppo_dischargedate = EmisReferralFeedback.oppo_dischargedate, _
-                .lead_personmobilenumber = EmisReferralFeedback.lead_personmobilenumber, _
+                .Lead_CreatedBy = EmisReferralFeedback.Lead_CreatedBy, _
                 .feed_feedbackreceived = EmisReferralFeedback.feed_feedbackreceived, _
                 .feed_feedbackcomments = EmisReferralFeedback.feed_feedbackcomments, _
                 .feed_complications = EmisReferralFeedback.feed_complications, _
                 .feed_ComplicationDetails = EmisReferralFeedback.feed_ComplicationDetails, _
                 .feed_expecteddiagnosis = EmisReferralFeedback.feed_expecteddiagnosis, _
                 .feed_diagnosiscomments = EmisReferralFeedback.feed_diagnosiscomments, _
-                .feed_GPComments = EmisReferralFeedback.feed_GPComments
+                .feed_GPComments = EmisReferralFeedback.feed_GPComments, _
+                .Lead_PrimaryPersonID = EmisReferralFeedback.Lead_PrimaryPersonID, _
+                .furt_conultantid = EmisReferralFeedback.furt_conultantid, _
+                .Consultant = EmisReferralFeedback.Consultant, _
+                .feed_opportunityid = EmisReferralFeedback.feed_opportunityid, _
+                .feed_leadid = EmisReferralFeedback.feed_leadid, _
+                .lead_gpreference = EmisReferralFeedback.lead_gpreference, _
+                .Lead_PersonName = EmisReferralFeedback.Lead_PersonName, _
+                .Lead_Description = EmisReferralFeedback.Lead_Description, _
+                .oppo_dischargedate = EmisReferralFeedback.oppo_dischargedate, _
+                .lead_personmobilenumber = EmisReferralFeedback.lead_personmobilenumber
             })
         Next
 
